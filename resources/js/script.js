@@ -17,6 +17,6 @@ for (let i=0; i<data.length; ++i) {
 
     // Add the image to the div
     newDiv.appendChild(img)
-    console.log(img)
+    itemsContainer.appendChild(newDiv)
 }
 
