@@ -18,5 +18,13 @@ for (let i=0; i<data.length; ++i) {
     // Add the image to the div
     newDiv.appendChild(img)
     itemsContainer.appendChild(newDiv)
+    
+    let description = document.createElement('p');
+    description.innerText = data[i].desc
+    newDiv.appendChild(description)
+
+    let price = document.createElement('p');
+    price.innerText = data[i].price
+    newDiv.appendChild(price)
 }
 
