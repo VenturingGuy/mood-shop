@@ -37,12 +37,36 @@ for (let i=0; i<data.length; ++i) {
     const cart = []
 
     function addItem(name, price) {
+        for (let i = 0; i< cart.length; i += 1){
+            if (cart[i].name === name) {
+                cart[i].qty += 1
+                return
+            }
+        }
         const item = { name: name, price: price, qty: 1 }
         cart.push(item)
     }
 
     function showItems() {
+
+        for (let i = 0; i < cart.length; i+=1) {
+            qty += cart[i].qty
+        }
+
         console.log( `You have ${cart.length} items in your cart` )
+        for (let i = 0; i < cart.length; i+=1) {
+            if (cart[i].name === name) {
+                return
+            }
+            console.log(`- ${cart[i].name} ${cart[i].price} x ${cart[i].qty}`)
+        }
+        
+        let total = 0
+        for (let i = 0; i < cart.length; i +=1) {
+            total += cart[i].price * cart[i].qty
+        }
+
+        console.log(`Total in cart: $${total}`)
     }
 
     addItem('Apple', 0.99)
